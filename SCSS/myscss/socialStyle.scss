@@ -1,41 +1,286 @@
-@import '../functions';
-@import '../variables';
-@import '../mixins/breakpoints';
-@import 'variables.scss';
-@import 'mixins.scss';
-@import 'header.scss';
-@import 'card.scss';
-body{
+@import "../functions";
+@import "../variables";
+@import "../mixins/breakpoints";
+//variables
+:root {
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --instagram: hsl(329, 70%, 58%);
+  --YouTube: hsl(348, 97%, 39%);
+  --Toggle: hsl(230, 22%, 74%);
+
+  // dark theme
+  --VeryDarkBlueBG: hsl(230, 17%, 14%);
+  --VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+  --DesaturatedBlueText: hsl(228, 34%, 66%);
+  --WhiteText: hsl(0, 0%, 100%);
+
+  //light theme
+  --WhiteBG: hsl(0, 0%, 100%);
+  --VeryPaleBlueTopBGPattern: hsl(225, 100%, 98%);
+  --LightGrayishBlueCardBG: hsl(227, 47%, 96%);
+  --DarkGrayishBlueText: hsl(228, 12%, 44%);
+  --VeryDarkBlueText: hsl(230, 17%, 14%);
+  //notes
+  // --Instagram:
+  // Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+  --beginLinearGradient: hsl(210, 78%, 56%);
+  --endLinearGradient: hsl(146, 68%, 55%);
+
+  //font
+  font-size: 14px;
+  font-family: "Inter", sans-serif !important;
+}
+//static
+body {
   background-color: var(--VeryDarkBlueBG);
   color: var(--WhiteText);
 }
-.wr{
+@mixin wr {
   padding: 1.8em;
 }
-.ishidden{
-  display: none;
+//MIXINS
+@mixin title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.7em;
+  font-weight: 700;
 }
-.second-title{
-  font-size: 2em;
-  margin-left: -0.5em;
-  margin-bottom: -50px;
+@mixin sm_title {
+  color: var(--DesaturatedBlueText);
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+@mixin defCard {
+  background-color: var(--DarkDesaturatedBlueCardBG);
+  border-radius: 0.4em;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  &-body {
+    text-align: center;
+    padding: 2.2em;
+  }
+  &-subtitle {
+    @include sm_title;
+    font-size: 0.8em;
+    &-img {
+      margin-top: -3px;
+    }
+  }
+  &-title {
+    margin-top: 0.3em;
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  &-follo {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 4px;
+  }
+  &-text {
+    margin-top: 1.4em;
+    font-weight: 700;
+    img {
+      margin-right: 1px;
+    }
+  }
+}
+//My Header
+.header {
+  background-color: var(--VeryDarkBlueTopBGPattern);
+  margin-top: 0;
+  &_wr_col_h1 {
+    @include title;
+  }
+  &_wr_col_p {
+    @include sm_title;
+    margin-bottom: 1.7em;
+  }
+  hr {
+    height: 0.1px;
+    background: {
+      color: var(--DesaturatedBlueText);
+    }
+  }
+  .switch {
+    display: flex;
+    align-items: center;
+
+    &_label {
+      @include sm_title;
+      margin: 0;
+      margin-right: 10px;
+    }
+
+    &_form {
+      background: linear-gradient(
+        90deg,
+        var(--beginLinearGradient),
+        var(--endLinearGradient)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: left; //USE JAVASCRIPT TO CHANGE THE JUSTIFY CONTENT  TO RIGHT
+      padding: 0 2px;
+      border: none;
+      border: {
+        radius: 20px;
+      }
+      height: 1.7em;
+      max-height: 25px;
+      width: 3.5em;
+      max-width: 50px;
+      margin: {
+        top: 0;
+        right: 0;
+      }
+      &_circle {
+        background-color: var(--VeryDarkBlueBG);
+        height: 90%;
+        width: 20px;
+        border-radius: 20px;
+        z-index: 10;
+      }
+    }
+  }
+}
+.header_row{
+  @include wr;
 }
 
-@include media-breakpoint-up(lg){
-  .title{
-    font-size: 2.5em;
+//first Cards
+.first_cards{
+  @include wr;
+}
+.card{
+  @include defCard;
+}
+.card_conten:nth-child(1){
+  .card {
+    border-top: 3px solid var(--Facebook);
+    .card-text {
+      color: var(--LimeGreen);
+    }
   }
-  :root{
-    font-size: 16px
+}
+.card_conten:nth-child(2){
+  .card{
+    border-top: 3px solid var(--Twitter);
+    .card-text {
+      color: var(--LimeGreen);
+    }
   }
-  header{
-    margin-top: 3em;
+}
+.card_conten:nth-child(3){
+  .card {
+    border-top: 3px solid var(--instagram);
+    .card-text {
+      color: var(--LimeGreen);
+    }
+    // color: linear-gradient(90deg,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
   }
-  .wr{
-    padding: 1.8em 6em;
+}
+.card_conten:nth-child(4){
+  .card {
+    border-top: 3px solid var(--YouTube);
+  
+    .card-text {
+      color: var(--BrightRed);
+    }
+  }
+}
+//second card contens
+.Second_cards{
+  @include wr;
+  text-align: left;
+}
+.second_title{
+  @include title;
+  text-align: left;
+  font-size: 1.8em;
+}
+.sm-card{
+  border-top: none !important;
+  .card-body{
+    padding: 1.5em;
+    .card_info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p{
+        margin: auto 0;
+        @include sm_title;
+      }
+      img{
+        height: 25px;
+        width: 25px;
+      }
+    }
+    .card_data{
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      &_title{
+        @include title;
+        margin-bottom: 0;
+      }
+      &_img{
+        margin: auto 0;
+        img{
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+//media querys
+@include media-breakpoint-up(sm) {
+  .card_conten:nth-child(1), .card_conten:nth-child(3){
+    .card{
+      margin-right: 10px;
+    }
+  }
+  .card_conten2:nth-child(1), .card_conten2:nth-child(3) ,.card_conten2:nth-child(5) ,.card_conten2:nth-child(7){
+    .card{
+      margin-right: 10px;
+    }
+  }
+  .cards_container{
+    padding: 0 1em;
+  }
+}
+@include media-breakpoint-up(md){
+  .card_conten2:nth-child(2) ,.card_conten2:nth-child(4),.card_conten2:nth-child(8){
+    .card{
+      margin-right: 10px;
+    }
+  }
+  .card_conten2:nth-child(3){
+    .sm-card{
+      margin-right: -2px;
+    }
   }
 }
 
-
-
-
+@include media-breakpoint-up(lg) {
+  .card_conten2:nth-child(3) ,.card_conten2:nth-child(6){
+    .card{
+      margin-right: 10px;
+    }
+  }
+  .col:nth-child(2){
+    .card{
+      margin-right: 10px;
+    }
+  }
+  .title {
+    font-size: 2.6em;
+  }
+  .wr {
+    padding: 1.8em 6em 0em 6em;
+  }
+}
