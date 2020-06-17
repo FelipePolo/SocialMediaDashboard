@@ -1,0 +1,50 @@
+.header{
+  background-color: var(--VeryDarkBlueTopBGPattern);
+
+  &_wr_col_h1{
+    @include title;
+  }
+  &_wr_col_p{
+    @include sm_title;
+    margin-bottom: 1.7em;
+  }
+  hr{
+    height: 0.1px;
+    background: {
+      color: var(--DesaturatedBlueText);
+    };
+  }
+  .switch{
+    display: flex;
+    align-items: center;
+
+    &_label{
+      @include sm_title;
+      margin: 0;
+      margin-right: 10px;
+    }
+
+    &_form{
+      background: linear-gradient(90deg,var(--beginLinearGradient), var(--endLinearGradient));
+      display: flex;
+      justify-content: left; //USE JAVASCRIPT TO CHANGE THE JUSTIFY CONTENT  TO RIGHT
+      border: none;
+      border: {
+        radius:20px;
+      };
+      height: 1.7em;
+      width: 3.5em;
+      margin: {
+        top: 0;
+        right: 0;
+      };
+      padding: 2px;
+      &_circle{
+        background-color: var(--VeryDarkBlueBG);
+        height: 100%;
+        width: 20px;
+        border-radius: 20px;
+      }
+    }
+  }
+}

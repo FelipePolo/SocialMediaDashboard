@@ -1,0 +1,41 @@
+@import '../functions';
+@import '../variables';
+@import '../mixins/breakpoints';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'header.scss';
+@import 'card.scss';
+body{
+  background-color: var(--VeryDarkBlueBG);
+  color: var(--WhiteText);
+}
+.wr{
+  padding: 1.8em;
+}
+.ishidden{
+  display: none;
+}
+.second-title{
+  font-size: 2em;
+  margin-left: -0.5em;
+  margin-bottom: -50px;
+}
+
+@include media-breakpoint-up(lg){
+  .title{
+    font-size: 2.5em;
+  }
+  :root{
+    font-size: 16px
+  }
+  header{
+    margin-top: 3em;
+  }
+  .wr{
+    padding: 1.8em 6em;
+  }
+}
+
+
+
+
