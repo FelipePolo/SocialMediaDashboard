@@ -236,6 +236,9 @@ body {
     }
   }
 }
+.cards_container{
+  padding: 0 1em;
+}
 .card_conten2{
   .card_data_img{
     color:var(--BrightRed) ;
@@ -257,9 +260,6 @@ body {
     .card{
       margin-right: 10px;
     }
-  }
-  .cards_container{
-    padding: 0 1em;
   }
 }
 @include media-breakpoint-up(md){

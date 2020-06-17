@@ -257,6 +257,10 @@ body {
   margin-right: 3px;
 }
 
+.cards_container {
+  padding: 0 1em;
+}
+
 .card_conten2 .card_data_img {
   color: var(--BrightRed);
 }
@@ -271,9 +275,6 @@ body {
   }
   .card_conten2:nth-child(1) .card, .card_conten2:nth-child(3) .card, .card_conten2:nth-child(5) .card, .card_conten2:nth-child(7) .card {
     margin-right: 10px;
-  }
-  .cards_container {
-    padding: 0 1em;
   }
 }
 
