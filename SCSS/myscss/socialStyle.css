@@ -257,6 +257,14 @@ body {
   margin-right: 3px;
 }
 
+.card_conten2 .card_data_img {
+  color: var(--BrightRed);
+}
+
+.card_conten2:nth-child(1) .card_data_img, .card_conten2:nth-child(3) .card_data_img, .card_conten2:nth-child(4) .card_data_img, .card_conten2:nth-child(5) .card_data_img, .card_conten2:nth-child(6) .card_data_img {
+  color: var(--LimeGreen);
+}
+
 @media (min-width: 576px) {
   .card_conten:nth-child(1) .card, .card_conten:nth-child(3) .card {
     margin-right: 10px;

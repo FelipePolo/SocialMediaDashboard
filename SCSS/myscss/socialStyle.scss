@@ -151,7 +151,6 @@ body {
 .header_row{
   @include wr;
 }
-
 //first Cards
 .first_cards{
   @include wr;
@@ -237,6 +236,16 @@ body {
     }
   }
 }
+.card_conten2{
+  .card_data_img{
+    color:var(--BrightRed) ;
+  }
+}
+.card_conten2:nth-child(1),.card_conten2:nth-child(3),.card_conten2:nth-child(4),.card_conten2:nth-child(5),.card_conten2:nth-child(6){
+  .card_data_img{
+    color:var(--LimeGreen) ;
+  }
+}
 //media querys
 @include media-breakpoint-up(sm) {
   .card_conten:nth-child(1), .card_conten:nth-child(3){
@@ -265,7 +274,6 @@ body {
     }
   }
 }
-
 @include media-breakpoint-up(lg) {
   .card_conten2:nth-child(3) ,.card_conten2:nth-child(6){
     .card{
